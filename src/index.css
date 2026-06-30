@@ -4,35 +4,76 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hide Scrollbars */
 ::-webkit-scrollbar {
   display: none;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
-*{
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-img{
-  max-width:100%;
-  height:auto;
-  display:block;
-}
-
-button{
-  -webkit-tap-highlight-color: transparent;
-}
 body {
   margin: 0;
   padding: 0;
-  background: #662222;
+  background: #060606;
   color: #F5DAA7;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   overflow-x: hidden;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+}
+
+/* Media */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Mobile Tap */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Form Elements */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Prevent Text Overflow */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Better Focus Accessibility */
+:focus-visible {
+  outline: 2px solid #F5DAA7;
+  outline-offset: 2px;
 }
